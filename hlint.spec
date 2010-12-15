@@ -1,7 +1,7 @@
 Summary:	Haskell Source code suggestions
 Name:		hlint
 Version:	1.8.3
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-%{version}.tar.gz
@@ -12,6 +12,7 @@ BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-haskell-src-exts
 BuildRequires:	ghc-transformers
 BuildRequires:	ghc-uniplate
+BuildRequires:	hscolour
 %requires_releq	ghc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,7 +45,7 @@ rm -rf %{name}-%{version}-doc
 cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} %{name}-%{version}-doc
 
 runhaskell Setup.hs register \
-	--gen-pkg-config=$RPM_BUILD_ROOT/%{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
+	--gen-pkg-config=$RPM_BUILD_ROOT/%{_libdir}/%{ghcdir}/package.conf.d/%{name}.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,7 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc NEWS
 %doc %{name}-%{version}-doc/html
-%{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}
+%attr(755,root,root) %{_bindir}/hlint
+%{_libdir}/%{ghcdir}/package.conf.d/%{name}.conf
+%{_libdir}/%{ghcdir}/%{name}-%{version}
+%{_datadir}/%{name}-%{version}
