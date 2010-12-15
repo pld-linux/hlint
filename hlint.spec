@@ -7,7 +7,11 @@ Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	af5a287804f0ed1ba41728febf74296f
 URL:		http://community.haskell.org/~ndm/hlint/
+BuildRequires:	cpphs
 BuildRequires:	ghc >= 6.12.3
+BuildRequires:	ghc-haskell-src-exts
+BuildRequires:	ghc-transformers
+BuildRequires:	ghc-uniplate
 %requires_releq	ghc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
