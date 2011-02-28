@@ -1,10 +1,10 @@
 Summary:	Haskell Source code suggestions
 Name:		hlint
 Version:	1.8.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
-Source0:	http://hackage.haskell.org/packages/archive/%{name}/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://hackage.haskell.org/packages/archive/hlint/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	af5a287804f0ed1ba41728febf74296f
 URL:		http://community.haskell.org/~ndm/hlint/
 BuildRequires:	cpphs
@@ -13,13 +13,26 @@ BuildRequires:	ghc-haskell-src-exts
 BuildRequires:	ghc-transformers
 BuildRequires:	ghc-uniplate
 BuildRequires:	hscolour
-%requires_releq	ghc
+BuildRequires:	rpmbuild(macros) >= 1.608
+%requires_eq	ghc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		ghcdir		ghc-%(/usr/bin/ghc --numeric-version)
+# debuginfo is not useful for ghc
+%define		_enable_debug_packages	0
 
 %description
 HLint gives suggestions on how to improve your source code.
+
+%package doc
+Summary:	HTML documentation for %{pkgname}
+Summary(pl.UTF-8):	Dokumentacja w formacie HTML dla %{pkgname}
+Group:		Documentation
+
+%description doc
+HTML documentation for %{pkgname}.
+
+%description doc -l pl.UTF-8
+Dokumentacja w formacie HTML dla %{pkgname}.
 
 %prep
 %setup -q
@@ -42,7 +55,7 @@ runhaskell Setup.hs copy --destdir=$RPM_BUILD_ROOT
 
 # work around automatic haddock docs installation
 rm -rf %{name}-%{version}-doc
-cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} %{name}-%{version}-doc
+cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/html %{name}-%{version}-doc
 
 runhaskell Setup.hs register \
 	--gen-pkg-config=$RPM_BUILD_ROOT/%{_libdir}/%{ghcdir}/package.conf.d/%{name}.conf
@@ -51,15 +64,18 @@ runhaskell Setup.hs register \
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/bin/ghc-pkg recache
+%ghc_pkg_recache
 
 %postun
-/usr/bin/ghc-pkg recache
+%ghc_pkg_recache
 
 %files
 %defattr(644,root,root,755)
-%doc %{name}-%{version}-doc/html
 %attr(755,root,root) %{_bindir}/hlint
 %{_libdir}/%{ghcdir}/package.conf.d/%{name}.conf
 %{_libdir}/%{ghcdir}/%{name}-%{version}
 %{_datadir}/%{name}-%{version}
+
+%files doc
+%defattr(644,root,root,755)
+%doc %{name}-%{version}-doc/*
