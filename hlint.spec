@@ -6,6 +6,7 @@ License:	GPL
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/hlint/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	4ce291cb13ff410bff8f1b9adb9f8a34
+Patch0:		%{name}-deps.patch
 URL:		http://community.haskell.org/~ndm/hlint/
 BuildRequires:	cpphs
 BuildRequires:	ghc >= 6.12.3
@@ -36,6 +37,7 @@ Dokumentacja w formacie HTML dla %{pkgname}.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 runhaskell Setup.hs configure -v2 \

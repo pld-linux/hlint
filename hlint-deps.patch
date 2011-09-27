@@ -1,0 +1,11 @@
+--- hlint-1.8.15/hlint.cabal~	2011-08-13 18:18:53.000000000 +0200
++++ hlint-1.8.15/hlint.cabal	2011-09-27 23:32:29.297422103 +0200
+@@ -41,7 +41,7 @@
+         base == 4.*, process, filepath, directory, containers,
+         transformers >= 0.0 && < 0.3,
+         hscolour >= 1.17 && < 1.20,
+-        cpphs >= 1.11 && < 1.13,
++        cpphs >= 1.11 && < 1.14,
+         haskell-src-exts >= 1.11 && < 1.12,
+         uniplate >= 1.5 && < 1.7
+ 
