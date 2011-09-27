@@ -1,11 +1,11 @@
 Summary:	Haskell Source code suggestions
 Name:		hlint
-Version:	1.8.3
-Release:	2
+Version:	1.8.15
+Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/hlint/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	af5a287804f0ed1ba41728febf74296f
+# Source0-md5:	4ce291cb13ff410bff8f1b9adb9f8a34
 URL:		http://community.haskell.org/~ndm/hlint/
 BuildRequires:	cpphs
 BuildRequires:	ghc >= 6.12.3
