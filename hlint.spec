@@ -10,6 +10,7 @@ URL:		http://community.haskell.org/~ndm/hlint/
 BuildRequires:	cpphs >= 1.20.1
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-ansi-terminal >= 0.6.2
+BuildRequires:	ghc-cmdargs >= 0.10
 BuildRequires:	ghc-extra >= 1.4.9
 BuildRequires:	ghc-haskell-src-exts >= 1.18.0
 BuildRequires:	ghc-refact >= 0.3
