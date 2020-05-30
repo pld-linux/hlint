@@ -1,24 +1,38 @@
 Summary:	Haskell Source code suggestions
 Name:		hlint
-Version:	1.9.36
+Version:	3.1.3
 Release:	1
 License:	GPL
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/hlint/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	3953cd1ed8c193c11e54e549832b795d
-URL:		http://community.haskell.org/~ndm/hlint/
+# Source0-md5:	4626b8e4333462c29cdd565c789d2220
+URL:		http://hackage.haskell.org/package/hlint
 BuildRequires:	cpphs >= 1.20.1
-BuildRequires:	ghc >= 6.12.3
+BuildRequires:	ghc >= 8.10.0
+BuildRequires:	hscolour >= 1.21
+BuildRequires:	ghc-aeson >= 1.1.2.0
 BuildRequires:	ghc-ansi-terminal >= 0.6.2
+BuildRequires:	ghc-base
+BuildRequires:	ghc-bytestring
 BuildRequires:	ghc-cmdargs >= 0.10
-BuildRequires:	ghc-extra >= 1.4.9
-BuildRequires:	ghc-haskell-src-exts >= 1.18.0
+BuildRequires:	ghc-containers
+BuildRequires:	ghc-data-default >= 0.3
+BuildRequires:	ghc-directory
+BuildRequires:	ghc-extra >= 1.7.1
+BuildRequires:	ghc-file-embed
+BuildRequires:	ghc-filepath
+BuildRequires:	ghc-filepattern >= 0.1.1
+BuildRequires:	ghc-ghc-lib-parser-ex >= 8.10.0.11
+BuildRequires:	ghc-process
 BuildRequires:	ghc-refact >= 0.3
+BuildRequires:	ghc-text
 BuildRequires:	ghc-transformers
-BuildRequires:	ghc-uniplate
-BuildRequires:	hscolour
+BuildRequires:	ghc-uniplate >= 1.5
+BuildRequires:	ghc-unordered-containers
+BuildRequires:	ghc-utf8-string
+BuildRequires:	ghc-vector
+BuildRequires:	ghc-yaml >= 0.5.0
 BuildRequires:	rpmbuild(macros) >= 1.608
-%requires_eq	ghc
 Obsoletes:	hlint-doc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
