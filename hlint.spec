@@ -1,7 +1,7 @@
 Summary:	Haskell Source code suggestions
 Name:		hlint
 Version:	3.1.3
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/hlint/%{version}/%{name}-%{version}.tar.gz
