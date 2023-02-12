@@ -2,7 +2,7 @@ Summary:	Haskell source code suggestions
 Summary(pl.UTF-8):	Sugestie dotyczące kodu źródłowego w Haskellu
 Name:		hlint
 Version:	3.1.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/hlint/%{version}/%{name}-%{version}.tar.gz
