@@ -1,4 +1,5 @@
-Summary:	Haskell Source code suggestions
+Summary:	Haskell source code suggestions
+Summary(pl.UTF-8):	Sugestie dotyczące kodu źródłowego w Haskellu
 Name:		hlint
 Version:	3.1.3
 Release:	2
@@ -44,6 +45,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 HLint gives suggestions on how to improve your source code.
+
+%description -l pl.UTF-8
+HLint daje sugestie, jak ulepszyć kod źródłowy.
 
 %prep
 %setup -q
