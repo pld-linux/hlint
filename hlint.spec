@@ -33,7 +33,7 @@ BuildRequires:	ghc-utf8-string
 BuildRequires:	ghc-vector
 BuildRequires:	ghc-yaml >= 0.5.0
 BuildRequires:	rpmbuild(macros) >= 1.608
-Obsoletes:	hlint-doc
+Obsoletes:	hlint-doc < 1.8.15-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
